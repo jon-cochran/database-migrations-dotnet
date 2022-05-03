@@ -1,1 +1,1 @@
-..\packages\roundhouse.0.8.6\bin\rh.exe -c "Server=.;Database=Migrations_RoundHouse;Integrated Security=true"
+..\packages\roundhouse.0.8.6\bin\rh.exe -c "Server=.\SQL2017;Database=Migrations_RoundHouse;Integrated Security=true"
