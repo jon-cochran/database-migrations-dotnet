@@ -5,16 +5,13 @@ BEGIN
 	
 	CREATE TABLE [audit].[AuditResults] (
 		[AuditID] [int] IDENTITY(1,1) NOT NULL,
-		[AuditAction] [char](1) NULL,
 		[TableName] [varchar](128) NULL,
-		[PrimaryKeyField] [varchar](500) NULL,
-		[PrimaryKeyValue] [varchar](500) NULL,
-		[FieldName] [varchar](128) NULL,
-		[OldValue] [varchar](1000) NULL,
-		[NewValue] [varchar](1000) NULL,
+		[Action] [char](1) NULL,
+		[Before] [nvarchar](max) NULL,
+		[After] [nvarchar](max) NULL,
 		[AuditDate] [datetime] NULL,
-		[AuditUser] [varchar](128) NULL,
-		[AuditHostName] [varchar](256) NULL
+		[User] [varchar](128) NULL,
+		[HostName] [varchar](256) NULL
 		)
 
 END;

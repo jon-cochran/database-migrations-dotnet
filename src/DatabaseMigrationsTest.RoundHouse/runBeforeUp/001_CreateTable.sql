@@ -1,0 +1,12 @@
+﻿IF NOT EXISTS (SELECT TOP 1 * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'Person' 
+ and TABLE_SCHEMA = 'dbo')
+BEGIN
+	CREATE TABLE [dbo].[Person]
+	(
+		[PersonId] INT NOT NULL Identity(1,1), 
+		[FirstName] NVARCHAR(255) NOT NULL,
+		[LastName] NVARCHAR(255) NOT NULL,
+		[DateOfBirth] DATETIME2 NOT NULL, 
+		CONSTRAINT [PK_Person] PRIMARY KEY ([PersonId])
+	)
+END
