@@ -44,15 +44,47 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="obj\Debug\.NETFramework,Version=v4.6.1.AssemblyAttributes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="apply-migrations.bat" />
+    <None Include="obj\Debug\DatabaseMigrationsTest.RoundHouse.csproj.AssemblyReference.cache" />
+    <None Include="obj\Debug\DatabaseMigrationsTest.RoundHouse.csproj.CoreCompileInputs.cache" />
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="up\001_CreateTable.sql" />
-    <EmbeddedResource Include="up\002_IncreasePersonFirstNameLength.sql" />
+    <Content Include="alterDatabase\001.Schema.audit.sql" />
+    <Content Include="CustomCreateDB.sql" />
+    <Content Include="indexes\500.Utility.RebuildIndexes.EVERYTIME.sql" />
+    <Content Include="runBeforeUp\100.audit.AuditedTables.sql" />
+    <Content Include="runBeforeUp\110.audit.AuditResults.sql" />
+    <Content Include="runBeforeUp\310.dbo.trg_Person_Audit.sql" />
+    <Content Include="runBeforeUp\001_CreateTable.sql" />
+    <Content Include="up\002_IncreasePersonFirstNameLength.sql" />
+    <Content Include="up\175.dbo.PersonInsert.sql" />
+    <Content Include="up\125.audit.AuditedTablesInsert.sql" />
+    <Content Include="views\200.dbo.vPerson.sql" />
+    <Content Include="sprocs\300.dbo.usp_GetPersonByLastNameDOB.sql" />
+    <Content Include="indexes\400.dbo.idx_LastNameDOB.sql" />
+    <Content Include="bin\Debug\DatabaseMigrationsTest.RoundHouse.dll" />
+    <Content Include="bin\Debug\DatabaseMigrationsTest.RoundHouse.pdb" />
+    <Content Include="obj\Debug\DatabaseMigrationsTest.RoundHouse.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\DatabaseMigrationsTest.RoundHouse.dll" />
+    <Content Include="obj\Debug\DatabaseMigrationsTest.RoundHouse.pdb" />
+    <None Include="apply-migrations.ps1" />
+    <Content Include="Version\RoundhouseDBVersion.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Release\" />
+    <Folder Include="functions\" />
+    <Folder Include="obj\Debug\TempPE\" />
+    <Folder Include="Output\" />
+    <Folder Include="permissions\" />
+    <Folder Include="runAfterCreateDatabase\" />
+    <Folder Include="runAfterOtherAnyTimeScripts\" />
+    <Folder Include="runFirstAfterUp\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

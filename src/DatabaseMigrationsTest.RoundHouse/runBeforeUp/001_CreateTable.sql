@@ -7,6 +7,22 @@ BEGIN
 		[FirstName] NVARCHAR(255) NOT NULL,
 		[LastName] NVARCHAR(255) NOT NULL,
 		[DateOfBirth] DATETIME2 NOT NULL, 
+		[isDeleted] bit NULL,
 		CONSTRAINT [PK_Person] PRIMARY KEY ([PersonId])
 	)
 END
+
+
+IF NOT EXISTS (
+	SELECT * 
+	FROM INFORMATION_SCHEMA.COLUMNS 
+	WHERE TABLE_NAME = 'Person' 
+		AND TABLE_SCHEMA = 'dbo'
+		AND COLUMN_NAME = 'isDeleted'
+	)
+BEGIN
+
+	ALTER TABLE [dbo].[Person]
+		ADD  [isDeleted]	bit
+
+END;
